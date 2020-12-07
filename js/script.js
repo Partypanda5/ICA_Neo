@@ -46,6 +46,9 @@ var playerOne = new Vimeo.Player(iframeOne);
 var iframeTwo = $('#video2');
 var playerTwo = new Vimeo.Player(iframeTwo);
 
+playerOne.setVolume(0);
+playerTwo.setVolume(0);
+
 playerOne.on('ended', function() 
 {
     tileTwo.style.zIndex = "5";
