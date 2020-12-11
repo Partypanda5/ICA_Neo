@@ -27,24 +27,24 @@ beginBtn.addEventListener('click', () =>
 
 tileOne.addEventListener('click', () => 
 {
-   tileOne.classList.toggle('fade');
-   tileTwo.classList.toggle('fade');
-   gifOne.classList.toggle('fadeIn');
+    tileOne.style.opacity = 0;
+    tileTwo.style.opacity = 0;
+   gifOne.style.opacity = 1;
    videoOne.classList.toggle('fadeIn');
    installation.style.zIndex = 0;
    installation.style.opacity = 0;
-   //playerOne.play();
+   playerOne.play();
 });
 
 tileTwo.addEventListener('click', () => 
 {
-    tileOne.classList.toggle('fade');
-    tileTwo.classList.toggle('fade');
-    gifTwo.classList.toggle('fadeIn');
+    tileOne.style.opacity = 0;
+    tileTwo.style.opacity = 0;
+    gifTwo.style.opacity = 1;
     videoTwo.classList.toggle('fadeIn');
     installation.style.zIndex = 0;
     installation.style.opacity = 0;
-   // playerTwo.play();
+    playerTwo.play();
 });
 
 playerOne.on('ended', function() 
@@ -55,24 +55,19 @@ playerOne.on('ended', function()
     videoOne.style.opacity = 0;
     videoOne.style.zIndex = 0;
     gifOne.style.opacity = 0;
+    tileOne.style.opacity = 0;
 
     if (oneClicked === true && twoClicked === false)
     {
-        tileTwo.classList.toggle('fadeIn');
+        tileTwo.style.opacity = 1;
     }
 
     if (oneClicked === true && twoClicked === true)
     {
-        console.log(twoClicked, oneClicked);
         setTimeout(function()
         { 
-            tileOne.style.display = "block";
-            tileOne.style.zIndex = "5";
-            tileOne.style.opacity = "1";
-            tileTwo.style.display = "block";
-            tileTwo.style.zIndex = "5";
-            tileTwo.style.opacity = "1";
-        },2000);
+            location.reload();
+        }, 5000);
     }
 });
 
@@ -84,31 +79,21 @@ playerTwo.on('ended', function()
     videoTwo.style.opacity = 0;
     videoTwo.style.zIndex = 0;
     gifTwo.style.opacity = 0;
+    tileTwo.style.opacity = 0;
 
     console.log(twoClicked, oneClicked);
 
     if (oneClicked === false && twoClicked === true)
     {
-        tileOne.classList.toggle('fadeIn');
+        tileOne.style.opacity = 1;
     }
 
     if (oneClicked === true && twoClicked === true)
     {
-        console.log(twoClicked, oneClicked);
         setTimeout(function()
         { 
-            tileOne.style.display = "block";
-            tileOne.style.zIndex = "5";
-            tileOne.style.opacity = "1";
-            tileTwo.style.display = "block";
-            tileTwo.style.zIndex = "5";
-            tileTwo.style.opacity = "1";
-
-           // selectTile.style.display = "block";
-
-            oneClicked = false;
-            twoClicked = false;
-        },2000);
+            location.reload();
+        }, 5000);
     }
 });
 

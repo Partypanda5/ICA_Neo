@@ -168,14 +168,16 @@ html, body
       width: 100vw;
       left: 0vw;
     }
-    #closeUpRoses
+    #gifOne
     {
       width: auto;
       height: 100vh;
+      left: 0;
     }
-    #closeUpFlowers
+    #gifTwo
     {
       width: auto;
       height: 100vh;
+      left: 0;
     }
   }
